@@ -1,17 +1,18 @@
-var supercalcul = require("./Pomsupercalc.js");
-var XLSX = require("xlsx");
-var workbook = XLSX.readFile(
-  "C:/Users/PraveenKumar/Desktop/Automation/Protractor Scripts/SuperCalculator.xlsx"
-);
-var worksheet = workbook.Sheets["Sheet1"];
-const m = worksheet["A6"].v;
-const n = worksheet["A8"].v;
+//var supercalcul = require("./Pomsupercalc.js");
+//var XLSX = require("xlsx");
+//var workbook = XLSX.readFile(
+  //"C:/Users/PraveenKumar/Desktop/Automation/Protractor Scripts/SuperCalculator.xlsx"
+//);
+//var worksheet = workbook.Sheets["Sheet1"];
+//const m = worksheet["A6"].v;
+//const n = worksheet["A8"].v;
 
 describe("Testing Super calculator", function () {
   it("super calculator", function () {
    browser.manage().window().maximize();
    //Browser Methods
     browser.get('https://juliemr.github.io/protractor-demo/')
+    browser.sleep(5000);
    /*.then(()=>(browser.navigate().back()))
    .then(()=>(browser.sleep(3000)))
    .then(()=>(browser.navigate().forward()))
@@ -21,7 +22,7 @@ describe("Testing Super calculator", function () {
    .then(()=>(browser.sleep(3000)))
    .then(()=>(browser.quit()));*/
    
-   browser.getCurrentUrl().then((url)=>{
+  browser.getCurrentUrl().then((url)=>{
 
        console.log(url);
 
@@ -34,7 +35,9 @@ describe("Testing Super calculator", function () {
 
    });
 
-   var firsnumber = element(by.model('first')).sendKeys('100');
+   browser.sleep(10000);
+
+   /*var firsnumber = element(by.model('first')).sendKeys('100');
 
    firsnumber.getAttribute('value').then((att)=>{
 
@@ -51,6 +54,6 @@ describe("Testing Super calculator", function () {
       browser.sleep(2000);
       supercalcul.click1();
       browser.sleep(5000);
-    }
+    }*/
 });
 });
